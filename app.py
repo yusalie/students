@@ -7,8 +7,11 @@ def init_sqlite_db():
     conn.execute('CREATE TABLE IF NOT EXISTS students (name TEXT, addr TEXT, city TEXT, pin TEXT)')
     print("Table created successfully")
     conn.close()
+    
 init_sqlite_db()
+
 app = Flask(__name__)
+@app.route('/')
 @app.route('/enter-new/')
     
 def enter_new_student():
